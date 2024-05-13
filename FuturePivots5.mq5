@@ -319,6 +319,7 @@ void LevelsDraw(int      shft,
         {
          if(modeInd == bullishMode)
            {
+            PlotText(ChartID(),"R3L"+name,0,tmend,R3,"R3","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"R2L"+name,0,tmend,R2,"R2 : Bullish Profit Zone","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"R1L"+name,0,tmend,R1,"R1","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
            }
@@ -326,6 +327,7 @@ void LevelsDraw(int      shft,
 
          if(modeInd == bearishMode)
            {
+            PlotText(ChartID(),"S3L"+name,0,tmend,S3,"S3","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"S2L"+name,0,tmend,S2,"S2 : Bearish Profit Zone","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"S1L"+name,0,tmend,S1,"S1","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
            }
@@ -335,12 +337,14 @@ void LevelsDraw(int      shft,
         {
          if(modeInd == bullishMode)
            {
+            PlotText(ChartID(),"R3P"+name,0,tmestrt,R3,DoubleToString(R3,4),"Arial",8,ColorRes,ANCHOR_LEFT_UPPER);
             PlotText(ChartID(),"R2P"+name,0,tmestrt,R2,DoubleToString(R2,4),"Arial",8,ColorRes,ANCHOR_LEFT_UPPER);
            }
 
          PlotText(0,"PPP"+name,0,tmestrt,PP,DoubleToString(PP,4),"Arial",8,ColorPP,ANCHOR_LEFT_UPPER);
          if(modeInd == bearishMode)
            {
+            PlotText(ChartID(),"S3P"+name,0,tmestrt,S3,DoubleToString(S3,4),"Arial",8,ColorSup,ANCHOR_LEFT_UPPER);
             PlotText(ChartID(),"S2P"+name,0,tmestrt,S2,DoubleToString(S2,4),"Arial",8,ColorSup,ANCHOR_LEFT_UPPER);
            }
         }
