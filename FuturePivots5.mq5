@@ -45,20 +45,20 @@ input indicatorMode  modeInd = bullishMode; // Indicator Mode
 
 input int              CountPeriods=5;
 input timeFrames       TimePeriod=Daily;
-input bool             PlotPivots=true;
-input bool             PlotFuturePivots=true;
-input bool             PlotPivotLabels=true;
-input bool             PlotPivotPrices=true;
-input ENUM_LINE_STYLE  StylePivots=STYLE_SOLID;
-input int              WidthPivots=2;
+bool             PlotPivots=true;
+bool             PlotFuturePivots=true;
+bool             PlotPivotLabels=true;
+bool             PlotPivotPrices=true;
+ENUM_LINE_STYLE  StylePivots=STYLE_SOLID;
+int              WidthPivots=2;
 input color            ColorRes=clrGray;
 input color            ColorPP=clrGray;
 input color            ColorSup=clrGray;
-input bool             PlotMidpoints=true;
-input ENUM_LINE_STYLE  StyleMidpoints=STYLE_DASH;
-input int              WidthMidpoints=1;
+bool             PlotMidpoints=true;
+ENUM_LINE_STYLE  StyleMidpoints=STYLE_DASH;
+int              WidthMidpoints=1;
 
-input bool             PlotZones=true;
+bool             PlotZones=true;
 input color            ColorBuyZone=clrDarkSeaGreen;
 input color            ColorSellZone=clrMistyRose;
 
@@ -66,7 +66,7 @@ input color            ColorSellZone=clrMistyRose;
 
 input color            ColorM35=clrGray;
 input color            ColorM02=clrGray;
-input int              TaillePolice=7;
+int              TaillePolice=7;
 string   period;
 
 long timestart,
@@ -325,38 +325,38 @@ void LevelsDraw(int      shft,
 
    if(PlotPivots)
      {
-      if(modeInd == bullishMode)
-        {
+//      if(modeInd == bullishMode)
+//        {
          PlotTrend(ChartID(),"R3"+name,0,tmestrt,R3,tmend,R3,ColorRes,StylePivots,WidthPivots+2);
          PlotTrend(ChartID(),"R2"+name,0,tmestrt,R2,tmend,R2,ColorRes,StylePivots,WidthPivots+1);
          PlotTrend(ChartID(),"R1"+name,0,tmestrt,R1,tmend,R1,ColorRes,StyleMidpoints,WidthPivots);
-        }
+//        }
 
       PlotTrend(0,"PP"+name,0,tmestrt,PP,tmend,PP,ColorPP,StylePivots,WidthPivots);
 
-      if(modeInd == bearishMode)
-        {
+//      if(modeInd == bearishMode)
+//        {
          PlotTrend(ChartID(),"S3"+name,0,tmestrt,S3,tmend,S3,ColorSup,StylePivots,WidthPivots+2);
          PlotTrend(ChartID(),"S2"+name,0,tmestrt,S2,tmend,S2,ColorSup,StylePivots,WidthPivots+1);
          PlotTrend(ChartID(),"S1"+name,0,tmestrt,S1,tmend,S1,ColorSup,StyleMidpoints,WidthPivots);
-        }
+//        }
 
       if(PlotPivotLabels)
         {
-         if(modeInd == bullishMode)
-           {
+         //if(modeInd == bullishMode)
+           //{
             PlotText(ChartID(),"R3L"+name,0,tmend,R3,"R3","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
-            PlotText(ChartID(),"R2L"+name,0,tmend,R2,"R2 : Bullish Profit Zone","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"R2L"+name,0,tmend,R2,"R2 : Profit Zone","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"R1L"+name,0,tmend,R1,"R1","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
-           }
+           //}
          PlotText(0,"PPL"+name,0,tmend,PP,"PP","Arial",8,ColorPP,ANCHOR_RIGHT_UPPER);
 
-         if(modeInd == bearishMode)
-           {
+         //if(modeInd == bearishMode)
+           //{
             PlotText(ChartID(),"S3L"+name,0,tmend,S3,"S3","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
-            PlotText(ChartID(),"S2L"+name,0,tmend,S2,"S2 : Bearish Profit Zone","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"S2L"+name,0,tmend,S2,"S2 : Profit Zone","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
             PlotText(ChartID(),"S1L"+name,0,tmend,S1,"S1","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
-           }
+           //}
 
         }
       if(PlotPivotPrices)
@@ -395,14 +395,14 @@ void LevelsDraw(int      shft,
          if(modeInd == bearishMode)
            {
             PlotText(ChartID(),"M0L"+name,0,tmend,M0,"M0","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
-            PlotText(ChartID(),"M1L"+name,0,tmend,M1,"M1 : Bearish Profit Target","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
-            PlotText(ChartID(),"M3L"+name,0,tmend,(M3+(100*_Point)),"M3 : Bearish Selling Zone","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"M1L"+name,0,tmend,M1,"M1 : Profit Target","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"M3L"+name,0,tmend,(M3+(100*_Point)),"M3 : Selling Zone","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
 
            }
          if(modeInd == bullishMode)
            {
-            PlotText(ChartID(),"M2L"+name,0,tmend,M2,"M2 : Bullish Buying Zone","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
-            PlotText(ChartID(),"M4L"+name,0,tmend,M4,"M4 : Bullish Profit Target","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"M2L"+name,0,tmend,M2,"M2 : Buying Zone","Arial",8,ColorSup,ANCHOR_RIGHT_UPPER);
+            PlotText(ChartID(),"M4L"+name,0,tmend,M4,"M4 : Profit Target","Arial",8,ColorRes,ANCHOR_RIGHT_UPPER);
            }
 
         }
@@ -427,8 +427,8 @@ void LevelsDraw(int      shft,
          PlotRectangle(ChartID(),"BZ"+name,0,tmestrt,PP,tmend,M2,ColorBuyZone);
          if(future == true)
            {
-            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
-            draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M2,_Digits),TaillePolice+4,clrGreen,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
+            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlpahTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+200,NotesLocation_y+10,NotesFont);
+            //draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M2,_Digits),TaillePolice+4,clrGreen,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
            }
 
         }
@@ -439,7 +439,7 @@ void LevelsDraw(int      shft,
          if(future == true)
            {
             draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
-            draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M3,_Digits),TaillePolice+4,clrRed,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
+            //draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M3,_Digits),TaillePolice+4,clrRed,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
            }
 
         }
@@ -824,4 +824,5 @@ bool boolRestrictAlert()
    ExpertRemove();
    return(true);
   }
+//+------------------------------------------------------------------+
 //+------------------------------------------------------------------+
