@@ -43,7 +43,7 @@ enum timeFrames
 
 input indicatorMode  modeInd = bullishMode; // Indicator Mode
 
-input int              CountPeriods=5;
+input int              CountPeriods=1;
 input timeFrames       TimePeriod=Daily;
 bool             PlotPivots=true;
 bool             PlotFuturePivots=true;
@@ -59,7 +59,7 @@ ENUM_LINE_STYLE  StyleMidpoints=STYLE_DASH;
 int              WidthMidpoints=1;
 
 bool             PlotZones=true;
-input color            ColorBuyZone=clrDarkSeaGreen;
+input color            ColorBuyZone=clrYellowGreen;
 input color            ColorSellZone=clrMistyRose;
 
 
@@ -438,7 +438,7 @@ void LevelsDraw(int      shft,
          PlotRectangle(ChartID(),"SZ"+name,0,tmestrt,PP,tmend,M3,ColorSellZone);
          if(future == true)
            {
-            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
+            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlpahTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
             //draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M3,_Digits),TaillePolice+4,clrRed,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
            }
 
