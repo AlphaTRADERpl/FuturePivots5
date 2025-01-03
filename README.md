@@ -1,4 +1,4 @@
-# FuturePivots5
+# Future Pivots 5
 
 ![devenv usage](https://github.com/AlphaTRADERpl/FuturePivots5/blob/main/pivots.png?raw=true)
 
