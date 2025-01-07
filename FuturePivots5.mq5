@@ -5,6 +5,8 @@
 //+------------------------------------------------------------------+
 
 #property copyright "Copyright, Spider's LAB OU"
+#property link      "https://www.alphatrader.pl"
+#property version   "1.00"
 #property indicator_chart_window
 #property indicator_buffers   13
 
@@ -427,7 +429,7 @@ void LevelsDraw(int      shft,
          PlotRectangle(ChartID(),"BZ"+name,0,tmestrt,PP,tmend,M2,ColorBuyZone);
          if(future == true)
            {
-            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlpahTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+200,NotesLocation_y+10,NotesFont);
+            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlphaTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+200,NotesLocation_y+10,NotesFont);
             //draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M2,_Digits),TaillePolice+4,clrGreen,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
            }
 
@@ -438,7 +440,7 @@ void LevelsDraw(int      shft,
          PlotRectangle(ChartID(),"SZ"+name,0,tmestrt,PP,tmend,M3,ColorSellZone);
          if(future == true)
            {
-            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlpahTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
+            draw_obj("CP","Copyright "+IntegerToString(TimeYearMQL4(TimeCurrent()))+", Spider's LAB OU for AlphaTRADER",TaillePolice+4,clrDarkBlue,4,NotesLocation_x+400,NotesLocation_y,NotesFont);
             //draw_obj("tradingZone","Projected Buy Zone : "+DoubleToString(PP,_Digits)+" - "+DoubleToString(M3,_Digits),TaillePolice+4,clrRed,4,NotesLocation_x+400,NotesLocation_y+20,NotesFont);
            }
 
